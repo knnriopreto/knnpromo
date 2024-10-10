@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promoção Especial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* Branco */
+        }
+        header {
+            background-color: #6a1b9a; /* Roxo */
+            color: white;
+            padding: 10px;
+        }
+        .logo {
+            max-width: 300px; /* Ajuste o tamanho da logo conforme necessário */
+            margin: 0 auto;
+        }
+        .promo {
+            margin-top: 30px;
+            margin-bottom: 50px;
+            font-size: 24px;
+            color: #ff9800; /* Laranja */
+            line-height: 1.5; /* Espaçamento entre linhas */
+        }
+        .timer {
+            font-size: 48px; /* Tamanho maior para o timer */
+            color: #ff9800; /* Laranja */
+            background-color: #000; /* Fundo escuro */
+            border: 5px solid #6a1b9a; /* Borda roxa */
+            border-radius: 10px; /* Bordas arredondadas */
+            padding: 20px; /* Espaçamento interno */
+            display: inline-block; /* Para que a borda se ajuste ao tamanho do texto */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra para um efeito de profundidade */
+        }
+        .impact {
+            font-size: 18px;
+            color: #ff9800; /* Laranja */
+            margin: 20px 0;
+            margin-top: 50px;
+        }
+        .carousel {
+            position: relative;
+            max-width: 600px;
+            margin: 20px auto;
+            overflow: hidden;
+            padding: 0 20px; /* Espaçamento nas laterais */
+        }
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .carousel-image {
+            min-width: calc(100% - 40px); /* Largura da imagem com espaçamento */
+            margin: 0 20px; /* Espaçamento entre as imagens */
+            box-sizing: border-box;
+            border: 2px solid #6a1b9a; /* Borda suave */
+            border-radius: 10px; /* Bordas arredondadas */
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        .enunciado-container {
+            max-width: 600px; /* Largura igual à do carrossel */
+            margin: 20px auto; /* Centraliza */
+            padding: 0 20px; /* Espaçamento nas laterais */
+            text-align: left; /* Alinha o texto à esquerda */
+        }
+        .enunciado {
+            margin: 0;
+            font-size: 20px;
+            color: #333;
+        }
+        .recognition-section {
+            margin: 100px 0; /* Espaçamento grande acima e abaixo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px; /* Espaçamento entre as imagens e as frases */
+        }
+        .recognition {
+            max-width: 200px; /* Tamanho máximo das imagens */
+            padding: 20px;
+        }
+        .seal-description {
+            margin-top: 10px; /* Espaçamento acima da descrição */
+            font-size: 16px; /* Tamanho da fonte */
+        }
+        @media (max-width: 600px) {
+            .promo {
+                font-size: 20px;
+            }
+            .timer {
+                font-size: 36px; /* Tamanho do timer em telas menores */
+            }
+            .enunciado {
+                font-size: 18px;
+            }
+            .recognition-section {
+                flex-direction: column; /* Alinha as imagens em coluna em telas menores */
+                gap: 20px; /* Reduz o espaçamento entre as imagens e as frases */
+                padding: 10px;
+            }
+        }
+        footer .seal {
+            max-width: 100px; /* Ajusta o tamanho do selo no rodapé */
+            margin-top: 10px; /* Espaçamento acima do selo */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="photos/Imagem_do_WhatsApp_de_2024-10-09_à_s__19.22.25_7960de8d-removebg-preview.png" alt="Logo" class="logo"> <!-- Logo centralizada -->
+    <h1>Promoção Especial de Dia das Crianças!</h1>
+</header>
+
+<div class="promo">
+    💥 <strong>BÔNUS EXCLUSIVO VÁLIDO PARA KNN RIO PRETO!</strong> 💥<br>
+    🔥 Primeira parcela a <strong>R$ 49,90!</strong><br>
+    🚀 <strong>50% OFF NO CURSO INTEIRO!</strong><br>
+    🚀 <strong>Taxa de matrícula R$ 00,00</strong><br>
+    📚 Material em até <strong>5x no cartão</strong> (válido para contratos de 24 meses)!<br><br>
+    👉 não fique de fora aproveite essa chance incrível de investir no futuro! Inicie essa jornada com a KNN RIO PRETO!<br><br>
+    🧡 <strong>Garanta já a sua vaga antes que o tempo acabe!</strong>
+</div>
+
+<div class="timer" id="timer"></div>
+<div class="impact">Live The Road, Love The Journey!</div>
+
+<!-- Enunciado -->
+<div class="enunciado-container">
+    <div class="enunciado">
+        A KNN idiomas, veio pra quebrar esse tabu de aprender uma nova língua. Com um método voltado pra conversação, para nativos Brasileiros. Viemos expandir os horizontes e quebrar as barreiras linguísticas.
+    </div>
+</div>
+
+<!-- Carrossel -->
+<div class="carousel">
+    <div class="carousel-images" id="carouselImages">
+        <img src="photos/Imagem do WhatsApp de 2024-10-09 à(s) 20.04.22_3549de66.jpg" alt="Imagem 1" class="carousel-image"> <!-- Substitua pelos caminhos das suas imagens -->
+        <img src="photos/Imagem do WhatsApp de 2024-10-09 à(s) 20.04.22_4f56375a.jpg" alt="Imagem 2" class="carousel-image">
+        <img src="photos/Imagem do WhatsApp de 2024-10-09 à(s) 20.04.22_dd8f5b66.jpg" alt="Imagem 3" class="carousel-image">
+    </div>
+    <button class="carousel-button prev" onclick="changeImage(-1)">&#10094;</button>
+    <button class="carousel-button next" onclick="changeImage(1)">&#10095;</button>
+</div>
+
+<!-- Seção de Reconhecimentos -->
+<div class="recognition-section">
+    <div>
+        <img src="photos/ABF_Excelencia2024_Selo_rgb_Final.png" alt="Selo de Excelência" class="recognition"> <!-- Selo de Excelência -->
+        <p><strong>Reconhecimento pela Qualidade!</strong><br>Nosso compromisso com a excelência no ensino é reconhecido por todos!</p>
+    </div>
+    <div>
+        <img src="photos/Imagem do WhatsApp de 2024-10-10 à(s) 10.56.59_12b5e8bf.jpg" alt="Reclame Aqui" class="recognition"> <!-- Imagem do Reclame Aqui -->
+        <p><strong>Alta Avaliação no Reclame Aqui!</strong><br>Fomos premiados pela satisfação dos nossos alunos!</p>
+    </div>
+</div>
+
+<script>
+    const timer = document.getElementById("timer");
+    const carouselImages = document.getElementById("carouselImages");
+    const images = document.querySelectorAll(".carousel-image");
+    let currentIndex = 0;
+
+    // Define a data de término para 24 horas a partir de agora
+    const countdownDuration = 24 * 60 * 60 * 1000; // 24 horas em milissegundos
+    let countdownDate = localStorage.getItem("countdownDate");
+
+    if (!countdownDate) {
+        countdownDate = Date.now() + countdownDuration;
+        localStorage.setItem("countdownDate", countdownDate);
+    } else {
+        countdownDate = parseInt(countdownDate);
+    }
+
+    const updateTimer = () => {
+        const now = Date.now();
+        const distance = countdownDate - now;
+
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        timer.innerHTML = `${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+
+        if (distance < 0) {
+            clearInterval(x);
+            timer.innerHTML = "A promoção acabou!";
+            localStorage.removeItem("countdownDate"); // Remove a data após a promoção acabar
+        }
+    };
+
+    const x = setInterval(updateTimer, 1000);
+    updateTimer(); // Atualiza o timer inicialmente
+
+    // Função para mudar a imagem do carrossel
+    function changeImage(direction) {
+        currentIndex = (currentIndex + direction + images.length) % images.length; // Looping
+        carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    setInterval(() => changeImage(1), 3000); // Muda a imagem a cada 3 segundos
+</script>
+
+<footer>
+    <img src="photos/Imagem_do_WhatsApp_de_2024-10-09_à_s__19.22.25_7960de8d-removebg-preview.png" alt="Selo de Excelência" class="seal"> <!-- Substitua pelo caminho do seu selo -->
+    <div class="seal-description">Quebrando barreiras e construindo sonhos com nosso selo de excelência!</div>
+    <p>Compromisso com a qualidade e a educação!</p>
+</footer>
+
+</body>
+</html>
